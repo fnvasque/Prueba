@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flappy Fish</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #001f3f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #7fdbff;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      text-shadow: 0 0 12px #00b5e2;
+      letter-spacing: 2px;
+    }
+
+    #gameWrapper {
+      position: relative;
+    }
+
+    canvas {
+      display: block;
+      border: 3px solid #0074d9;
+      border-radius: 12px;
+      box-shadow: 0 0 40px #0074d988;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 20, 50, 0.75);
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #overlay h2 {
+      font-size: 2rem;
+      color: #7fdbff;
+      text-shadow: 0 0 10px #00b5e2;
+      margin-bottom: 10px;
+    }
+
+    #overlay p {
+      font-size: 1rem;
+      color: #aef;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    #overlay .score-display {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    button {
+      padding: 12px 32px;
+      font-size: 1.1rem;
+      background: #0074d9;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 16px #0074d988;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    button:hover { background: #005fa3; transform: scale(1.05); }
+    button:active { transform: scale(0.97); }
+
+    #scoreBoard {
+      margin-top: 10px;
+      color: #7fdbff;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐟 Flappy Fish</h1>
+  <div id="gameWrapper">
+    <canvas id="canvas" width="400" height="550"></canvas>
+    <div id="overlay">
+      <h2>🐟 Flappy Fish</h2>
+      <p>Presiona <strong>Espacio</strong>, <strong>clic</strong> o<br>toca la pantalla para nadar.</p>
+      <button id="startBtn">¡Jugar!</button>
+    </div>
+  </div>
+  <div id="scoreBoard">Mejor puntuación: <span id="bestScore">0</span></div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const overlay = document.getElementById('overlay');
+    const startBtn = document.getElementById('startBtn');
+    const bestScoreEl = document.getElementById('bestScore');
+
+    const W = canvas.width;
+    const H = canvas.height;
+
+    // ── Constantes ──────────────────────────────────────────────
+    const GRAVITY       = 0.38;
+    const FLAP_POWER    = -7.2;
+    const PIPE_WIDTH    = 58;
+    const PIPE_GAP      = 155;
+    const PIPE_SPEED    = 2.6;
+    const PIPE_INTERVAL = 1600; // ms
+
+    // ── Estado del juego ─────────────────────────────────────────
+    let fish, pipes, score, bestScore, gameRunning, gameOver, lastPipe, animId;
+    let bubbles = [];
+    let seaweedList = [];
+    let particles = [];
+
+    bestScore = parseInt(localStorage.getItem('flappyFishBest') || '0');
+    bestScoreEl.textContent = bestScore;
+
+    // ── Inicialización ───────────────────────────────────────────
+    function init() {
+      fish = { x: 80, y: H / 2, vy: 0, r: 18 };
+      pipes = [];
+      score = 0;
+      gameRunning = false;
+      gameOver = false;
+      lastPipe = 0;
+      bubbles = Array.from({ length: 25 }, () => randomBubble(true));
+      seaweedList = Array.from({ length: 7 }, (_, i) => ({
+        x: 30 + i * 55,
+        h: 40 + Math.random() * 55,
+        sway: Math.random() * Math.PI * 2,
+        speed: 0.03 + Math.random() * 0.02
+      }));
+      particles = [];
+    }
+
+    function randomBubble(scatter) {
+      return {
+        x: scatter ? Math.random() * W : Math.random() * W,
+        y: scatter ? Math.random() * H : H + 8,
+        r: 2 + Math.random() * 4,
+        speed: 0.3 + Math.random() * 0.7,
+        alpha: 0.3 + Math.random() * 0.5,
+        wobble: Math.random() * Math.PI * 2,
+        wobbleSpeed: 0.03 + Math.random() * 0.04
+      };
+    }
+
+    // ── Tuberías ─────────────────────────────────────────────────
+    function spawnPipe() {
+      const minTop = 60;
+      const maxTop = H - PIPE_GAP - 60;
+      const topH = minTop + Math.random() * (maxTop - minTop);
+      pipes.push({ x: W, topH, scored: false });
+    }
+
+    // ── Dibujo del fondo submarino ───────────────────────────────
+    function drawBackground() {
+      // Gradiente de agua
+      const grad = ctx.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0,   '#003d6b');
+      grad.addColorStop(0.5, '#005588');
+      grad.addColorStop(1,   '#002244');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Rayos de luz desde arriba
+      ctx.save();
+      for (let i = 0; i < 5; i++) {
+        const lx = 60 + i * 75;
+        const grad2 = ctx.createLinearGradient(lx, 0, lx + 20, H * 0.6);
+        grad2.addColorStop(0, 'rgba(100,220,255,0.07)');
+        grad2.addColorStop(1, 'rgba(100,220,255,0)');
+        ctx.fillStyle = grad2;
+        ctx.beginPath();
+        ctx.moveTo(lx - 15, 0);
+        ctx.lineTo(lx + 40, 0);
+        ctx.lineTo(lx + 20, H * 0.6);
+        ctx.lineTo(lx - 5, H * 0.6);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+
+      // Fondo arenoso
+      const sandGrad = ctx.createLinearGradient(0, H - 40, 0, H);
+      sandGrad.addColorStop(0, '#c8a96e');
+      sandGrad.addColorStop(1, '#a07840');
+      ctx.fillStyle = sandGrad;
+      ctx.fillRect(0, H - 40, W, 40);
+
+      // Pequeñas piedras
+      ctx.fillStyle = '#8a6830';
+      [[50, H-38,12,8],[130,H-36,8,5],[260,H-39,15,7],[350,H-37,10,6]].forEach(([x,y,w,h]) => {
+        ctx.beginPath();
+        ctx.ellipse(x, y, w, h, 0, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    // ── Algas ────────────────────────────────────────────────────
+    function drawSeaweed(t) {
+      seaweedList.forEach(sw => {
+        sw.sway += sw.speed;
+        const segments = 6;
+        const segH = sw.h / segments;
+        ctx.save();
+        ctx.strokeStyle = '#2d8c4e';
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        let cx = sw.x, cy = H - 40;
+        ctx.moveTo(cx, cy);
+        for (let i = 0; i < segments; i++) {
+          const angle = Math.sin(sw.sway + i * 0.8) * 0.4;
+          cx += Math.sin(angle) * segH * 0.5;
+          cy -= segH;
+          ctx.lineTo(cx, cy);
+        }
+        ctx.stroke();
+        // Punta
+        ctx.fillStyle = '#3ab05e';
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, 6, 10, Math.sin(sw.sway) * 0.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    // ── Burbujas ─────────────────────────────────────────────────
+    function drawBubbles() {
+      bubbles.forEach(b => {
+        b.y -= b.speed;
+        b.wobble += b.wobbleSpeed;
+        b.x += Math.sin(b.wobble) * 0.4;
+        if (b.y < -10) Object.assign(b, randomBubble(false));
+
+        ctx.save();
+        ctx.globalAlpha = b.alpha;
+        ctx.strokeStyle = '#a0e8ff';
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+        ctx.stroke();
+        // Reflejo
+        ctx.fillStyle = 'rgba(200,240,255,0.35)';
+        ctx.beginPath();
+        ctx.arc(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.35, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    // ── Partículas de colisión ────────────────────────────────────
+    function spawnParticles(x, y) {
+      for (let i = 0; i < 18; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1.5 + Math.random() * 3;
+        particles.push({
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          life: 1,
+          r: 2 + Math.random() * 4,
+          color: ['#ff6b6b','#ffd93d','#6bcb77','#4d96ff'][Math.floor(Math.random()*4)]
+        });
+      }
+    }
+
+    function updateParticles() {
+      particles = particles.filter(p => p.life > 0);
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        p.vy += 0.15;
+        p.life -= 0.035;
+        ctx.save();
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    // ── Tuberías (corales) ────────────────────────────────────────
+    function drawPipes() {
+      pipes.forEach(p => {
+        // Coral superior (hacia abajo)
+        drawCoral(p.x, 0, PIPE_WIDTH, p.topH, true);
+        // Coral inferior (hacia arriba)
+        drawCoral(p.x, p.topH + PIPE_GAP, PIPE_WIDTH, H - (p.topH + PIPE_GAP), false);
+      });
+    }
+
+    function drawCoral(x, y, w, h, fromTop) {
+      const grad = ctx.createLinearGradient(x, y, x + w, y);
+      grad.addColorStop(0, '#c0392b');
+      grad.addColorStop(0.5, '#e74c3c');
+      grad.addColorStop(1, '#c0392b');
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(x, y, w, h);
+
+      // Borde brillante
+      ctx.fillStyle = 'rgba(255,180,160,0.3)';
+      ctx.fillRect(x + 4, y, 6, h);
+
+      // Cabeza del coral con bordes redondeados
+      const headH = 22;
+      ctx.fillStyle = '#e74c3c';
+      if (fromTop) {
+        roundRect(ctx, x - 5, y + h - headH, w + 10, headH, [0, 0, 8, 8]);
+        // Puntas de coral
+        for (let i = 0; i < 4; i++) {
+          const px = x + 6 + i * 13;
+          ctx.fillStyle = '#ff6b6b';
+          ctx.beginPath();
+          ctx.moveTo(px, y + h - headH);
+          ctx.lineTo(px + 5, y + h - headH - 14);
+          ctx.lineTo(px + 10, y + h - headH);
+          ctx.closePath();
+          ctx.fill();
+        }
+      } else {
+        roundRect(ctx, x - 5, y, w + 10, headH, [8, 8, 0, 0]);
+        for (let i = 0; i < 4; i++) {
+          const px = x + 6 + i * 13;
+          ctx.fillStyle = '#ff6b6b';
+          ctx.beginPath();
+          ctx.moveTo(px, y + headH);
+          ctx.lineTo(px + 5, y + headH + 14);
+          ctx.lineTo(px + 10, y + headH);
+          ctx.closePath();
+          ctx.fill();
+        }
+      }
+
+      // Textura de puntos
+      ctx.fillStyle = 'rgba(0,0,0,0.12)';
+      for (let dy = 10; dy < h - 10; dy += 18) {
+        ctx.beginPath();
+        ctx.arc(x + w / 2, y + dy, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      const [tl, tr, br, bl] = Array.isArray(r) ? r : [r,r,r,r];
+      ctx.beginPath();
+      ctx.moveTo(x + tl, y);
+      ctx.lineTo(x + w - tr, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + tr);
+      ctx.lineTo(x + w, y + h - br);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - br, y + h);
+      ctx.lineTo(x + bl, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - bl);
+      ctx.lineTo(x, y + tl);
+      ctx.quadraticCurveTo(x, y, x + tl, y);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    // ── Dibujo del pez ───────────────────────────────────────────
+    function drawFish(x, y, vy) {
+      const angle = Math.max(-0.5, Math.min(0.7, vy * 0.055));
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+
+      // Sombra
+      ctx.save();
+      ctx.globalAlpha = 0.2;
+      ctx.fillStyle = '#000';
+      ctx.beginPath();
+      ctx.ellipse(2, 4, 18, 10, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      // Cola
+      ctx.fillStyle = '#e67e22';
+      ctx.beginPath();
+      ctx.moveTo(-14, 0);
+      ctx.lineTo(-28, -13);
+      ctx.lineTo(-26, 0);
+      ctx.lineTo(-28, 13);
+      ctx.closePath();
+      ctx.fill();
+
+      // Aleta dorsal
+      ctx.fillStyle = '#f39c12';
+      ctx.beginPath();
+      ctx.moveTo(-2, -13);
+      ctx.lineTo(4, -22);
+      ctx.lineTo(10, -14);
+      ctx.closePath();
+      ctx.fill();
+
+      // Aleta pectoral
+      ctx.fillStyle = '#f39c12';
+      ctx.beginPath();
+      ctx.moveTo(2, 4);
+      ctx.lineTo(-4, 14);
+      ctx.lineTo(8, 12);
+      ctx.closePath();
+      ctx.fill();
+
+      // Cuerpo principal
+      const bodyGrad = ctx.createRadialGradient(-2, -4, 2, 0, 0, 20);
+      bodyGrad.addColorStop(0, '#f9ca24');
+      bodyGrad.addColorStop(0.6, '#f0932b');
+      bodyGrad.addColorStop(1, '#e55807');
+      ctx.fillStyle = bodyGrad;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, 20, 13, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Escamas
+      ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+      ctx.lineWidth = 1;
+      [[4, -4, 5], [-3, 2, 4], [8, 3, 4]].forEach(([sx, sy, sr]) => {
+        ctx.beginPath();
+        ctx.arc(sx, sy, sr, Math.PI * 0.7, Math.PI * 1.8);
+        ctx.stroke();
+      });
+
+      // Vientre
+      ctx.fillStyle = 'rgba(255,255,220,0.4)';
+      ctx.beginPath();
+      ctx.ellipse(2, 4, 12, 7, 0.2, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Ojo
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(11, -3, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#1a1a2e';
+      ctx.beginPath();
+      ctx.arc(12, -3, 3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(13, -4, 1.2, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Boca
+      ctx.strokeStyle = '#c0392b';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(18, 1, 4, 0.2, 0.9);
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    // ── Marcador ─────────────────────────────────────────────────
+    function drawScore() {
+      ctx.save();
+      ctx.fillStyle = 'rgba(0,0,0,0.4)';
+      roundRect(ctx, W / 2 - 45, 12, 90, 38, 10);
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 26px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = '#00b5e2';
+      ctx.shadowBlur = 8;
+      ctx.fillText(score, W / 2, 32);
+      ctx.restore();
+    }
+
+    // ── Lógica principal ─────────────────────────────────────────
+    function update(ts) {
+      if (!gameRunning || gameOver) return;
+
+      // Física del pez
+      fish.vy += GRAVITY;
+      fish.y += fish.vy;
+
+      // Límite superior
+      if (fish.y - fish.r < 0) {
+        fish.y = fish.r;
+        fish.vy = 0;
+      }
+
+      // Límite inferior (suelo)
+      if (fish.y + fish.r > H - 40) {
+        triggerGameOver();
+        return;
+      }
+
+      // Tuberías
+      if (ts - lastPipe > PIPE_INTERVAL) {
+        spawnPipe();
+        lastPipe = ts;
+      }
+
+      pipes.forEach(p => { p.x -= PIPE_SPEED; });
+      pipes = pipes.filter(p => p.x + PIPE_WIDTH > -10);
+
+      // Colisión y puntuación
+      for (const p of pipes) {
+        const hit =
+          fish.x + fish.r - 6 > p.x &&
+          fish.x - fish.r + 6 < p.x + PIPE_WIDTH &&
+          (fish.y - fish.r + 4 < p.topH || fish.y + fish.r - 4 > p.topH + PIPE_GAP);
+        if (hit) { triggerGameOver(); return; }
+
+        if (!p.scored && p.x + PIPE_WIDTH < fish.x) {
+          p.scored = true;
+          score++;
+        }
+      }
+    }
+
+    function triggerGameOver() {
+      gameOver = true;
+      gameRunning = false;
+      spawnParticles(fish.x, fish.y);
+      if (score > bestScore) {
+        bestScore = score;
+        localStorage.setItem('flappyFishBest', bestScore);
+        bestScoreEl.textContent = bestScore;
+      }
+      setTimeout(showOverlay, 700);
+    }
+
+    function showOverlay() {
+      overlay.innerHTML = `
+        <h2>💀 ¡Chocaste!</h2>
+        <div class="score-display">
+          Puntuación: <strong>${score}</strong><br>
+          Mejor: <strong>${bestScore}</strong>
+        </div>
+        <button id="startBtn">Reintentar</button>
+      `;
+      overlay.style.display = 'flex';
+      document.getElementById('startBtn').addEventListener('click', startGame);
+    }
+
+    // ── Bucle de juego ───────────────────────────────────────────
+    function loop(ts) {
+      drawBackground();
+      drawSeaweed(ts);
+      drawBubbles();
+      drawPipes();
+      drawFish(fish.x, fish.y, fish.vy);
+      updateParticles();
+      if (gameRunning) drawScore();
+      update(ts);
+      animId = requestAnimationFrame(loop);
+    }
+
+    // ── Controles ────────────────────────────────────────────────
+    function flap() {
+      if (!gameRunning && !gameOver) {
+        gameRunning = true;
+        lastPipe = performance.now();
+      }
+      if (gameOver) return;
+      fish.vy = FLAP_POWER;
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.code === 'Space' || e.code === 'ArrowUp') { e.preventDefault(); flap(); }
+    });
+    canvas.addEventListener('click', flap);
+    canvas.addEventListener('touchstart', e => { e.preventDefault(); flap(); }, { passive: false });
+
+    // ── Iniciar juego ─────────────────────────────────────────────
+    function startGame() {
+      overlay.style.display = 'none';
+      if (animId) cancelAnimationFrame(animId);
+      init();
+      gameRunning = false;
+      lastPipe = 0;
+      animId = requestAnimationFrame(ts => {
+        lastPipe = ts;
+        gameRunning = true;
+        loop(ts);
+      });
+    }
+
+    // Arranque inicial (previsualización estática)
+    init();
+    animId = requestAnimationFrame(loop);
+
+    startBtn.addEventListener('click', startGame);
+  </script>
+</body>
+</html>
