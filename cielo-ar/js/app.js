@@ -249,13 +249,15 @@
   const BG_STARS = (() => {
     const rnd = mulberry32(20260610);
     const out = [];
-    for (let i = 0; i < 460; i++) {
+    for (let i = 0; i < 900; i++) {
+      const t = rnd();
       out.push({
         ra: rnd() * 360,
         dec: Math.asin(2 * rnd() - 1) * RAD,
-        mag: 3.1 + rnd() * 2.6,
+        mag: 2.9 + rnd() * 2.8,
         phase: rnd() * Math.PI * 2,
-        speed: 0.6 + rnd() * 2.2
+        speed: 0.8 + rnd() * 2.6,
+        tint: t < 0.06 ? '#a9c4ff' : (t < 0.13 ? '#ffd9b0' : '#dfe6f8')
       });
     }
     return out;
@@ -272,9 +274,9 @@
     const rnd = mulberry32(42);
     const out = [];
     for (let l = 0; l < 360; l += 3) {
-      const blobs = 2;
-      for (let j = 0; j < blobs; j++) {
-        const b = (rnd() + rnd() + rnd() - 1.5) * 9;       // latitud galáctica ~gaussiana
+      for (let j = 0; j < 3; j++) {
+        const narrow = j === 0;                              // j 0: núcleo fino y brillante de la banda
+        const b = (rnd() + rnd() + rnd() - 1.5) * (narrow ? 4 : 10);
         const lr = (l + rnd() * 3) * DEG, br = b * DEG;
         const g = { x: Math.cos(br) * Math.cos(lr), y: Math.cos(br) * Math.sin(lr), z: Math.sin(br) };
         const ex = G[0][0] * g.x + G[0][1] * g.y + G[0][2] * g.z;
@@ -285,13 +287,28 @@
         out.push({
           ra: Astro.norm360(Math.atan2(ey, ex) * RAD),
           dec: Math.asin(Math.max(-1, Math.min(1, ez))) * RAD,
-          sizeDeg: (5 + rnd() * 9) * (0.7 + 0.5 * core),
-          alpha: (0.020 + rnd() * 0.026) * (0.5 + 0.9 * core)
+          sizeDeg: (narrow ? 3.5 + rnd() * 5 : 6 + rnd() * 10) * (0.7 + 0.5 * core),
+          alpha: (narrow ? 0.085 + rnd() * 0.065 : 0.05 + rnd() * 0.05) * (0.4 + 1.1 * core),
+          rgb: core > 0.78 ? '232,208,182' : '168,192,240'   // bulbo dorado, brazos azulados
         });
       }
     }
     return out;
   })();
+
+  // Joyas del cielo profundo: nebulosas, galaxias y cúmulos reales
+  const DSOS = [
+    { name: 'Nebulosa de Orión', ra: 83.82, dec: -5.39, sizeDeg: 2.4, rgb: '255,158,190', alpha: 0.55 },
+    { name: 'Galaxia de Andrómeda', ra: 10.68, dec: 41.27, sizeDeg: 3.2, rgb: '214,222,255', alpha: 0.42, stretch: 0.62 },
+    { name: 'Nebulosa de la Laguna', ra: 270.92, dec: -24.38, sizeDeg: 2.0, rgb: '255,170,205', alpha: 0.45 },
+    { name: 'Nebulosa de Carina', ra: 161.26, dec: -59.87, sizeDeg: 2.6, rgb: '255,150,160', alpha: 0.5 },
+    { name: 'Cúmulo Doble de Perseo', ra: 34.75, dec: 57.13, sizeDeg: 1.5, rgb: '198,214,255', alpha: 0.5 },
+    { name: '', ra: 56.87, dec: 24.11, sizeDeg: 1.9, rgb: '170,200,255', alpha: 0.5 } // halo azul de las Pléyades
+  ];
+
+  // Estrellas fugaces
+  const meteors = [];
+  let nextMeteorAt = 0;
 
   let vignette = null;
   function buildVignette(w, h) {
@@ -406,7 +423,7 @@
     } else if (sunAlt > -16) {
       stops = [[0, '#04071d'], [0.6, '#0c1136'], [1, '#1c2350']];                 // anochecer
     } else {
-      stops = [[0, '#010208'], [0.45, '#040818'], [0.8, '#091030'], [1, '#0e1638']]; // noche profunda
+      stops = [[0, '#020310'], [0.45, '#060a20'], [0.8, '#0c1438'], [1, '#121c45']]; // noche profunda
     }
     const g = ctx.createLinearGradient(0, 0, 0, h);
     for (const [pos, col] of stops) g.addColorStop(pos, col);
@@ -416,7 +433,7 @@
 
   function drawHorizon(w, h, f, basis) {
     // Resplandor ancho + línea fina
-    for (const [width, color] of [[9, 'rgba(110,210,160,0.10)'], [1.4, 'rgba(140,235,185,0.65)']]) {
+    for (const [width, color] of [[16, 'rgba(110,210,160,0.10)'], [5, 'rgba(120,220,170,0.18)'], [1.4, 'rgba(150,240,190,0.75)']]) {
       ctx.strokeStyle = color;
       ctx.lineWidth = width * state.dpr;
       ctx.beginPath();
@@ -461,7 +478,7 @@
 
   // Luna con su fase real: semicírculo iluminado + elipse del terminador
   function drawMoon(p, r, illum, brightAngle) {
-    drawGlow('220,228,255', p.x, p.y, r * 3.2, 0.5);
+    drawGlow('220,228,255', p.x, p.y, r * 4.4, 0.65);
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.rotate(brightAngle);
@@ -535,25 +552,88 @@
         const { aa, p } = projectRaDec(b.ra, b.dec, jd, w, h, f, basis);
         if (aa.alt < -12 || !p.visible) continue;
         const rad = f * Math.tan(b.sizeDeg * DEG);
-        drawGlow('176,192,235', p.x, p.y, rad, b.alpha * starDim);
+        drawGlow(b.rgb, p.x, p.y, rad, b.alpha * starDim);
+      }
+      // Nebulosas y galaxias
+      for (const d of DSOS) {
+        const { aa, p } = projectRaDec(d.ra, d.dec, jd, w, h, f, basis);
+        if (aa.alt < -8 || !p.visible) continue;
+        const rad = f * Math.tan(d.sizeDeg * DEG);
+        if (d.stretch) {
+          // Galaxias: tres manchas solapadas formando un huso inclinado
+          for (const k of [-1, 0, 1]) {
+            drawGlow(d.rgb, p.x + k * rad * 0.55, p.y - k * rad * 0.3, rad * (1 - 0.3 * Math.abs(k)), d.alpha * starDim);
+          }
+        } else {
+          drawGlow(d.rgb, p.x, p.y, rad, d.alpha * starDim);
+          drawGlow('255,255,255', p.x, p.y, rad * 0.35, d.alpha * 0.7 * starDim);
+        }
+        if (d.name && starDim > 0.8) {
+          ctx.font = `italic ${10 * state.dpr}px Georgia, serif`;
+          ctx.fillStyle = `rgba(${d.rgb},0.75)`;
+          ctx.fillText(d.name, p.x + rad * 0.5, p.y - rad * 0.5);
+        }
       }
       ctx.globalCompositeOperation = 'source-over';
     }
 
-    // Estrellas anónimas de fondo, con parpadeo sutil
+    // Estrellas anónimas de fondo, con parpadeo
     if (starDim > 0.4) {
-      ctx.fillStyle = '#cfd9f2';
       for (const s of BG_STARS) {
-        const { aa, p } = projectRaDec(s.ra * 1, s.dec, jd, w, h, f, basis);
+        const { aa, p } = projectRaDec(s.ra, s.dec, jd, w, h, f, basis);
         if (aa.alt < -5 || !p.visible) continue;
-        const tw = 0.6 + 0.4 * Math.sin(now * s.speed + s.phase);
-        const r = Math.max(0.5, (5.9 - s.mag) * 0.34) * state.dpr;
-        ctx.globalAlpha = (0.16 + (5.7 - s.mag) * 0.1) * tw * starDim;
+        const tw = 0.55 + 0.45 * Math.sin(now * s.speed + s.phase);
+        const r = Math.max(0.5, (5.9 - s.mag) * 0.36) * state.dpr;
+        ctx.fillStyle = s.tint;
+        ctx.globalAlpha = (0.22 + (5.7 - s.mag) * 0.13) * tw * starDim;
         ctx.beginPath();
         ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.globalAlpha = 1;
+    }
+
+    // Estrellas fugaces ocasionales
+    if (starDim > 0.5) {
+      if (now > nextMeteorAt) {
+        nextMeteorAt = now + 4 + Math.random() * 9;
+        if (meteors.length < 3) {
+          meteors.push({
+            az: Math.random() * 360,
+            alt: 25 + Math.random() * 45,
+            dir: Math.random() * Math.PI * 2,
+            len: 12 + Math.random() * 14,
+            dur: 0.55 + Math.random() * 0.65,
+            t0: now
+          });
+        }
+      }
+      for (let i = meteors.length - 1; i >= 0; i--) {
+        const m = meteors[i];
+        const pr = (now - m.t0) / m.dur;
+        if (pr >= 1 || pr < 0) { meteors.splice(i, 1); continue; }
+        const env = Math.sin(Math.PI * pr);
+        const cosA = Math.max(0.25, Math.cos(m.alt * DEG));
+        const headAz = m.az + Math.cos(m.dir) * m.len * pr / cosA;
+        const headAlt = m.alt + Math.sin(m.dir) * m.len * pr;
+        const tailPr = Math.max(0, pr - 0.35);
+        const tailAz = m.az + Math.cos(m.dir) * m.len * tailPr / cosA;
+        const tailAlt = m.alt + Math.sin(m.dir) * m.len * tailPr;
+        const hp = project(headAz, headAlt, w, h, f, basis);
+        const tp = project(tailAz, tailAlt, w, h, f, basis);
+        if ((!hp.visible && !tp.visible) || hp.zc < 0.03 || tp.zc < 0.03) continue;
+        const grad = ctx.createLinearGradient(tp.x, tp.y, hp.x, hp.y);
+        grad.addColorStop(0, 'rgba(255,255,255,0)');
+        grad.addColorStop(1, `rgba(255,255,255,${0.95 * env})`);
+        ctx.strokeStyle = grad;
+        ctx.lineCap = 'round';
+        ctx.lineWidth = 1.7 * state.dpr;
+        ctx.beginPath();
+        ctx.moveTo(tp.x, tp.y);
+        ctx.lineTo(hp.x, hp.y);
+        ctx.stroke();
+        drawGlow('210,225,255', hp.x, hp.y, 11 * state.dpr, 0.55 * env);
+      }
     }
 
     // Estrellas del catálogo (posiciones proyectadas se reutilizan para las líneas)
@@ -565,42 +645,61 @@
       starPos[i] = project(aa.az, aa.alt, w, h, f, basis);
     }
 
-    // Líneas de constelaciones
-    ctx.lineWidth = 1 * state.dpr;
+    // Líneas de constelaciones: trazo ancho difuso + trazo fino brillante
     ctx.lineCap = 'round';
-    ctx.strokeStyle = `rgba(96,138,222,${0.4 * starDim})`;
+    for (const [width, alpha] of [[3.6, 0.16], [1.2, 0.6]]) {
+      ctx.lineWidth = width * state.dpr;
+      ctx.strokeStyle = `rgba(106,150,235,${alpha * starDim})`;
+      for (const c of CONSTELLATIONS) {
+        for (const [aId, bId] of c.lines) {
+          const a = starPos[STAR_INDEX[aId]];
+          const b = starPos[STAR_INDEX[bId]];
+          if (a && b && (a.visible || b.visible) && a.zc > 0.03 && b.zc > 0.03) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
     for (const c of CONSTELLATIONS) {
       let cx = 0, cy = 0, n = 0;
       for (const [aId, bId] of c.lines) {
         const a = starPos[STAR_INDEX[aId]];
         const b = starPos[STAR_INDEX[bId]];
         if (a && b && (a.visible || b.visible) && a.zc > 0.03 && b.zc > 0.03) {
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
           cx += a.x + b.x; cy += a.y + b.y; n += 2;
         }
       }
       if (n >= 4) {
         ctx.font = `italic ${11 * state.dpr}px Georgia, serif`;
-        ctx.fillStyle = `rgba(122,158,235,${0.6 * starDim})`;
+        ctx.fillStyle = `rgba(130,165,240,${0.7 * starDim})`;
         ctx.fillText(c.name, cx / n, cy / n);
       }
     }
 
-    // Puntos de estrellas con halo y color
+    // Puntos de estrellas con halo, color y picos de difracción en las más brillantes
+    ctx.globalCompositeOperation = 'lighter';
     for (let i = 0; i < STARS.length; i++) {
       const p = starPos[i];
       if (!p || !p.visible) continue;
       const s = STARS[i];
       const r = starRadius(s.mag);
       const tint = STAR_TINTS[s.id] || '#ffffff';
-      const tw = s.mag > 0.6 ? 0.82 + 0.18 * Math.sin(now * (1.4 + (i % 7) * 0.5) + i * 2.1) : 1;
-      if (s.mag < 1.6) {
-        const rgb = tint === '#ffffff' ? '235,240,255'
-          : `${parseInt(tint.slice(1, 3), 16)},${parseInt(tint.slice(3, 5), 16)},${parseInt(tint.slice(5, 7), 16)}`;
-        drawGlow(rgb, p.x, p.y, r * 6, 0.33 * starDim * tw);
+      const tw = s.mag > 0.6 ? 0.78 + 0.22 * Math.sin(now * (1.4 + (i % 7) * 0.5) + i * 2.1) : 1;
+      const rgb = tint === '#ffffff' ? '235,240,255'
+        : `${parseInt(tint.slice(1, 3), 16)},${parseInt(tint.slice(3, 5), 16)},${parseInt(tint.slice(5, 7), 16)}`;
+      if (s.mag < 1.6) drawGlow(rgb, p.x, p.y, r * 7.5, 0.42 * starDim * tw);
+      if (s.mag < 0.6) {
+        // Picos de difracción en cruz
+        const spike = r * 5.2 * tw;
+        ctx.strokeStyle = `rgba(${rgb},${0.5 * starDim * tw})`;
+        ctx.lineWidth = 1 * state.dpr;
+        ctx.beginPath();
+        ctx.moveTo(p.x - spike, p.y); ctx.lineTo(p.x + spike, p.y);
+        ctx.moveTo(p.x, p.y - spike); ctx.lineTo(p.x, p.y + spike);
+        ctx.stroke();
       }
       ctx.fillStyle = tint;
       ctx.globalAlpha = Math.min(1, (1.3 - s.mag * 0.16)) * starDim * tw;
@@ -608,7 +707,13 @@
       ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
       ctx.fill();
       ctx.globalAlpha = 1;
-      if (s.mag < 1.2) drawLabel(s.name, p.x, p.y, `rgba(205,220,255,${0.85 * starDim})`);
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    for (let i = 0; i < STARS.length; i++) {
+      const p = starPos[i];
+      if (p && p.visible && STARS[i].mag < 1.2) {
+        drawLabel(STARS[i].name, p.x, p.y, `rgba(205,220,255,${0.85 * starDim})`);
+      }
     }
 
     // Planetas
@@ -619,13 +724,20 @@
       const p = project(aa.az, aa.alt, w, h, f, basis);
       if (!p.visible) continue;
       const mag = Astro.planetMagnitude(pl.id, jd);
-      const r = Math.max(2.4 * state.dpr, starRadius(mag));
+      const r = Math.max(2.6 * state.dpr, starRadius(mag));
       const rgb = `${parseInt(pl.color.slice(1, 3), 16)},${parseInt(pl.color.slice(3, 5), 16)},${parseInt(pl.color.slice(5, 7), 16)}`;
-      drawGlow(rgb, p.x, p.y, r * 5, 0.4);
+      drawGlow(rgb, p.x, p.y, r * 6.5, 0.5);
       ctx.fillStyle = pl.color;
       ctx.beginPath();
       ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
       ctx.fill();
+      if (pl.id === 'saturn') {
+        ctx.strokeStyle = `rgba(${rgb},0.85)`;
+        ctx.lineWidth = 1.3 * state.dpr;
+        ctx.beginPath();
+        ctx.ellipse(p.x, p.y, r * 2.2, r * 0.75, -0.35, 0, Math.PI * 2);
+        ctx.stroke();
+      }
       drawLabel(pl.name, p.x, p.y, pl.color);
     }
 
