@@ -28,8 +28,8 @@ html, body {
   display: flex;
   gap: 8px;
   align-items: center;
-  padding: calc(8px + env(safe-area-inset-top)) 12px 8px;
-  background: linear-gradient(to bottom, rgba(2, 5, 18, 0.85), rgba(2, 5, 18, 0));
+  padding: calc(10px + env(safe-area-inset-top)) 12px 14px;
+  background: linear-gradient(to bottom, rgba(2, 4, 14, 0.8), rgba(2, 4, 14, 0));
 }
 
 .finder {
@@ -37,14 +37,16 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(10, 18, 45, 0.8);
-  border: 1px solid rgba(120, 150, 230, 0.35);
-  border-radius: 12px;
-  padding: 8px 12px;
-  backdrop-filter: blur(6px);
+  background: rgba(10, 16, 40, 0.55);
+  border: 1px solid rgba(150, 175, 255, 0.22);
+  border-radius: 14px;
+  padding: 9px 14px;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.finder-label { font-size: 14px; white-space: nowrap; }
+.finder-label { font-size: 14px; white-space: nowrap; opacity: 0.9; }
 
 #target {
   flex: 1;
@@ -58,57 +60,112 @@ html, body {
 #target option, #target optgroup { color: #111; }
 
 .icon-btn {
-  background: rgba(10, 18, 45, 0.8);
-  border: 1px solid rgba(120, 150, 230, 0.35);
-  border-radius: 12px;
+  background: rgba(10, 16, 40, 0.55);
+  border: 1px solid rgba(150, 175, 255, 0.22);
+  border-radius: 14px;
   color: #dfe7ff;
   font-size: 18px;
-  padding: 8px 12px;
+  padding: 9px 13px;
   cursor: pointer;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.12s ease;
 }
+.icon-btn:active { transform: scale(0.92); }
 
 .bottombar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 8px 12px calc(10px + env(safe-area-inset-bottom));
+  padding: 14px 12px calc(12px + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  background: linear-gradient(to top, rgba(2, 5, 18, 0.85), rgba(2, 5, 18, 0));
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to top, rgba(2, 4, 14, 0.8), rgba(2, 4, 14, 0));
   pointer-events: none;
 }
 
 .target-info {
-  background: rgba(60, 45, 5, 0.75);
-  border: 1px solid rgba(255, 211, 77, 0.5);
+  align-self: stretch;
+  background: rgba(48, 36, 6, 0.6);
+  border: 1px solid rgba(255, 211, 77, 0.4);
   color: #ffe9a8;
-  border-radius: 10px;
-  padding: 8px 12px;
+  border-radius: 12px;
+  padding: 9px 14px;
   font-size: 14px;
-  line-height: 1.35;
+  line-height: 1.4;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
 .status {
   font-size: 12px;
-  color: rgba(190, 205, 245, 0.75);
+  color: rgba(195, 210, 248, 0.8);
   text-align: center;
+  background: rgba(8, 13, 34, 0.5);
+  border: 1px solid rgba(150, 175, 255, 0.14);
+  border-radius: 999px;
+  padding: 5px 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
+
+/* ---------- pantalla de inicio con cielo estrellado animado ---------- */
 
 .overlay {
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 30%, #101c45 0%, #02040f 75%);
+  background: radial-gradient(ellipse at 50% 25%, #131f4d 0%, #070c24 45%, #02040f 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
   z-index: 10;
+  overflow: hidden;
 }
 .overlay[hidden] { display: none; }
 
+.overlay::before,
+.overlay::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.4px 1.4px at 13% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 31% 64%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1.8px 1.8px at 47% 12%, #dfe9ff, transparent),
+    radial-gradient(1px 1px at 58% 79%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1.3px 1.3px at 71% 33%, #fff, transparent),
+    radial-gradient(1px 1px at 84% 58%, rgba(220,232,255,0.9), transparent),
+    radial-gradient(1.6px 1.6px at 92% 14%, #fff, transparent),
+    radial-gradient(1px 1px at 22% 87%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1.2px 1.2px at 66% 92%, #e8efff, transparent),
+    radial-gradient(1px 1px at 5% 51%, rgba(255,255,255,0.8), transparent);
+  background-size: 520px 520px;
+  background-repeat: repeat;
+  animation: twinkle 5s ease-in-out infinite;
+}
+.overlay::after {
+  background-size: 760px 760px;
+  transform: rotate(35deg);
+  animation-duration: 7.5s;
+  animation-delay: -2.6s;
+  opacity: 0.7;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.45; }
+}
+
 .overlay-card {
+  position: relative;
+  z-index: 1;
   max-width: 420px;
   text-align: center;
   display: flex;
@@ -116,31 +173,37 @@ html, body {
   gap: 14px;
 }
 
-.overlay-icon { font-size: 56px; }
+.overlay-icon {
+  font-size: 56px;
+  filter: drop-shadow(0 0 18px rgba(140, 170, 255, 0.55));
+}
 
 .overlay-card h1 {
-  font-size: 32px;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, #9db8ff, #e8f0ff, #9db8ff);
+  font-size: 34px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #9db8ff, #f2f6ff 45%, #ffd9a0 70%, #9db8ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 0 32px rgba(150, 180, 255, 0.25);
 }
 
-.overlay-card p { font-size: 15px; line-height: 1.5; color: #c4d0f0; }
+.overlay-card p { font-size: 15px; line-height: 1.55; color: #c4d0f0; }
 .overlay-card .hint { font-size: 13px; color: #8fa0cc; }
 
 #startBtn {
-  margin-top: 6px;
+  margin-top: 8px;
   align-self: center;
   font-size: 17px;
   font-weight: 600;
   color: #061027;
   background: linear-gradient(135deg, #ffd34d, #ffae34);
   border: none;
-  border-radius: 14px;
-  padding: 14px 44px;
+  border-radius: 16px;
+  padding: 14px 48px;
   cursor: pointer;
-  box-shadow: 0 6px 24px rgba(255, 190, 60, 0.35);
+  box-shadow: 0 6px 28px rgba(255, 190, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 0.12s ease;
 }
-#startBtn:active { transform: scale(0.97); }
+#startBtn:active { transform: scale(0.96); }
