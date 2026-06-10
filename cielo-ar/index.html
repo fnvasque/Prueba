@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#060b1a">
+  <meta name="description" content="Visor del cielo en tiempo real: apunta el teléfono y descubre planetas, estrellas, constelaciones y la Estación Espacial Internacional.">
+  <title>Cielo AR — Mapa del cielo</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <canvas id="sky"></canvas>
+
+  <header class="topbar">
+    <label class="finder">
+      <span class="finder-label">🔭 Buscar</span>
+      <select id="target">
+        <option value="">— nada seleccionado —</option>
+      </select>
+    </label>
+    <button id="modeBtn" class="icon-btn" title="Cambiar entre brújula y modo manual">🧭</button>
+  </header>
+
+  <footer class="bottombar">
+    <div id="targetInfo" class="target-info" hidden></div>
+    <div id="status" class="status"></div>
+  </footer>
+
+  <div id="startOverlay" class="overlay">
+    <div class="overlay-card">
+      <div class="overlay-icon">🌌</div>
+      <h1>Cielo AR</h1>
+      <p>Apunta el teléfono al cielo para ver <strong>planetas, estrellas y constelaciones</strong> en esa dirección, y sigue en tiempo real a la <strong>Estación Espacial Internacional</strong> y otros satélites.</p>
+      <p class="hint">Necesita acceso a los <em>sensores de movimiento</em> y a tu <em>ubicación</em> para calcular el cielo sobre ti. Si no hay sensores, arrastra con el dedo para explorar.</p>
+      <button id="startBtn">Comenzar</button>
+    </div>
+  </div>
+
+  <!-- SGP4 para propagar satélites desde sus TLE; si no carga, la ISS usa una API de respaldo -->
+  <script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js" defer></script>
+  <script src="js/astro.js" defer></script>
+  <script src="js/stars.js" defer></script>
+  <script src="js/satellites.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
