@@ -4,7 +4,7 @@
  */
 'use strict';
 
-const CACHE = 'cielo-ar-v3';
+const CACHE = 'cielo-ar-v4';
 const SHELL = [
   './',
   './index.html',
@@ -24,7 +24,9 @@ const LIVE_HOSTS = ['celestrak.org', 'api.wheretheiss.at'];
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE)
-      .then(cache => Promise.allSettled(SHELL.map(url => cache.add(url))))
+      .then(cache => Promise.allSettled(
+        SHELL.map(url => cache.add(new Request(url, { cache: 'no-cache' })))
+      ))
       .then(() => self.skipWaiting())
   );
 });

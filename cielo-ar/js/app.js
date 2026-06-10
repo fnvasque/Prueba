@@ -2,6 +2,7 @@
 'use strict';
 
 (() => {
+  const APP_VERSION = 'v4';   // mantener en sincronía con CACHE de sw.js
   const DEG = Math.PI / 180;
   const RAD = 180 / Math.PI;
 
@@ -209,7 +210,7 @@
   function updateStatus() {
     const loc = `${state.obs.lat.toFixed(2)}°, ${state.obs.lon.toFixed(2)}° (${state.obsSource})`;
     const sens = state.mode === 'sensor' ? 'brújula activa' : 'modo manual: arrastra para mirar';
-    statusEl.textContent = `📍 ${loc} · 🧭 ${sens}`;
+    statusEl.textContent = `📍 ${loc} · 🧭 ${sens} · ${APP_VERSION}`;
     modeBtn.textContent = state.mode === 'sensor' ? '🧭' : '👆';
   }
 
@@ -916,7 +917,18 @@
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch(() => {});
+      navigator.serviceWorker.register('./sw.js').then(reg => {
+        reg.update();                                  // busca versión nueva en cada arranque
+        setInterval(() => reg.update(), 30 * 60 * 1000);
+      }).catch(() => {});
+      // Cuando un service worker nuevo toma el control, recarga una vez
+      // para servir la versión recién cacheada
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (reloaded) return;
+        reloaded = true;
+        location.reload();
+      });
     });
   }
 })();
