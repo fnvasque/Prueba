@@ -4,7 +4,7 @@
  */
 'use strict';
 
-const CACHE = 'cielo-ar-v4';
+const CACHE = 'cielo-ar-v5';
 const SHELL = [
   './',
   './index.html',

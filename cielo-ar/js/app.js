@@ -2,7 +2,7 @@
 'use strict';
 
 (() => {
-  const APP_VERSION = 'v4';   // mantener en sincronía con CACHE de sw.js
+  const APP_VERSION = 'v5';   // mantener en sincronía con CACHE de sw.js
   const DEG = Math.PI / 180;
   const RAD = 180 / Math.PI;
 
@@ -46,6 +46,7 @@
     manual: { az: 0, alt: 25 },     // cámara en modo manual (arrastre)
     quatTarget: null,               // orientación cruda de los sensores (cuaternión)
     quatSmooth: null,               // orientación suavizada que usa la cámara
+    angVel: 0,                      // velocidad angular suavizada del objetivo (rad/s)
     lastFrame: 0,
     target: '',                     // valor del dropdown
     dpr: 1
@@ -145,13 +146,34 @@
     }
   }
 
-  // Filtro pasa-bajos adaptativo: firme en reposo, ágil cuando giras deprisa
+  // Filtro pasa-bajos adaptativo basado en velocidad sostenida:
+  //  - firme y sin temblor en reposo
+  //  - responde con suavidad a giros deliberados (también lentos y laterales)
+  //  - inmune a saltos de un solo frame (p. ej. la brújula de iOS cerca de la vertical)
   function smoothedBasis(dt) {
     if (!state.quatTarget) return null;
-    if (!state.quatSmooth) state.quatSmooth = state.quatTarget;
-    const diff = quatAngle(state.quatSmooth, state.quatTarget); // radianes
-    const k = 5 + diff * 22;
-    const t = 1 - Math.exp(-dt * k);
+    if (!state.quatSmooth) { state.quatSmooth = state.quatTarget; return quatToBasis(state.quatSmooth); }
+
+    const diff = quatAngle(state.quatSmooth, state.quatTarget); // error angular (rad)
+
+    // Velocidad angular del objetivo, suavizada: un único frame ruidoso apenas la mueve,
+    // así que no podemos confundir un salto del sensor con un giro real.
+    const inst = Math.min(diff / dt, 8);   // limita la estimación a una velocidad humana real
+    state.angVel += (inst - state.angVel) * Math.min(1, dt * 8);
+
+    // Zona muerta: congela el micro-temblor del sensor cuando el teléfono está quieto.
+    if (diff < 0.005 && state.angVel < 0.12) return quatToBasis(state.quatSmooth);
+
+    // Ganancia: suave en reposo (cte. ~0.45 s), ágil durante giros sostenidos.
+    const k = 2.2 + Math.min(state.angVel, 6) * 3.0;
+    let t = 1 - Math.exp(-dt * k);
+
+    // Límite de avance por frame, proporcional a la velocidad sostenida:
+    // un giro real (con movimiento) tiene cupo de sobra; un salto espurio (sin
+    // movimiento => angVel baja) queda limitado y se descarta en vez de saltar.
+    const maxStep = (0.8 + state.angVel * 1.2) * dt; // rad permitidos este frame
+    if (diff * t > maxStep) t = maxStep / diff;
+
     state.quatSmooth = quatNlerp(state.quatSmooth, state.quatTarget, t);
     return quatToBasis(state.quatSmooth);
   }
