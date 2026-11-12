@@ -1,0 +1,2053 @@
+[
+ {
+  "dominio": "fullerton.cl",
+  "fecha": "2026-11-12T02:34:34+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://fullerton.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "bloqueado en /, /producto/crema-pastelera-fastmix-400-g/ (grupo propio)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "bloqueado en /, /producto/crema-pastelera-fastmix-400-g/ (grupo propio)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "bloqueado en /, /producto/crema-pastelera-fastmix-400-g/ (grupo propio)",
+    "CCBot": "bloqueado en /, /producto/crema-pastelera-fastmix-400-g/ (grupo propio)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [],
+   "urls_producto": 362,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://fullerton.cl/producto/crema-pastelera-fastmix-400-g/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 3.050"
+    ],
+    "stock": [
+     "7 disponibles"
+    ],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "happymascota.cl",
+  "fecha": "2026-11-12T02:34:53+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://happymascota.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 4,
+   "errores": [],
+   "urls_producto": 2461,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://happymascota.cl/producto/orijen-lata-puppy-poultry-fish-pate-360gr/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 6.000"
+    ],
+    "stock": [
+     "6 disponibles"
+    ],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "lospatiperrosconcepcion.cl",
+  "fecha": "2026-11-12T02:34:53+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://lospatiperrosconcepcion.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [],
+   "urls_producto": 1596,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://lospatiperrosconcepcion.cl/producto/skouts-honor-spray-calmante-de-picazon-236ml/",
+   "estructurados": [],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 15.000"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "petshopmg.cl",
+  "fecha": "2026-11-12T02:34:53+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://petshopmg.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 748,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://petshopmg.cl/producto/urinary-perro-st-ox-canino-2-kg/",
+   "estructurados": [],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 18.900"
+    ],
+    "stock": [
+     "Sin existencias",
+     "existencias",
+     "Disponibilidad para retiro en tienda:"
+    ],
+    "disponibilidad_datos": [],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "puranatura.pet",
+  "fecha": "2026-11-12T02:34:55+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.puranatura.pet/",
+   "redirecciones": [
+    [
+     301,
+     "https://puranatura.pet/",
+     "https://www.puranatura.pet/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 47,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://www.puranatura.pet/tienda/alimento-humedo-perros-carne-pack-x12/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 23.880",
+     "$ 20.990",
+     "$ 1.749"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "animal-lovers.cl",
+  "fecha": "2026-11-12T02:34:52+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://animal-lovers.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 8,
+   "errores": [],
+   "urls_producto": 1347,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://animal-lovers.cl/producto/superpet-omega-puppy/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 6.390,0",
+     "$ 3.990,0",
+     "$3.990,0"
+    ],
+    "stock": [
+     "Sin existencias",
+     "existencias"
+    ],
+    "disponibilidad_datos": [
+     "OutOfStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "superbarf.cl",
+  "fecha": "2026-11-12T02:35:04+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://superbarf.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 6,
+   "errores": [
+    "https://superbarf.cl/sitemap.html -> sin <loc>"
+   ],
+   "urls_producto": 0,
+   "otras_urls": 18,
+   "sitemap_de_productos": false
+  },
+  "ficha": {
+   "url": "https://superbarf.cl/producto/comida-barf-de-vacuno/",
+   "estructurados": [],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 25.500",
+     "$5.100"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "bigotesblancos.cl",
+  "fecha": "2026-11-12T02:34:59+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://bigotesblancos.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [
+    "https://bigotesblancos.cl/?sitemap.xml -> sin <loc>"
+   ],
+   "urls_producto": 235,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://bigotesblancos.cl/product/koala-gigwi/",
+   "estructurados": [],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 12,000.00"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "mustafapets.cl",
+  "fecha": "2026-11-12T02:34:53+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.mustafapets.cl/",
+   "redirecciones": [
+    [
+     301,
+     "https://mustafapets.cl/",
+     "https://www.mustafapets.cl/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 448,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://www.mustafapets.cl/producto/ponedora-final-molido-para-aves-25-kg/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 17.400"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "familiapet.cl",
+  "fecha": "2026-11-12T02:34:54+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://familiapet.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 15,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://familiapet.cl/producto/60kgsaco-arena-bengala-aromas/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 44.990"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "gourpet.cl",
+  "fecha": "2026-11-12T02:46:02+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.gourpet.cl/",
+   "redirecciones": [
+    [
+     301,
+     "https://gourpet.cl/",
+     "https://www.gourpet.cl/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [
+    "https://www.gourpet.cl/sitemap.xml -> 404",
+    "https://www.gourpet.cl/sitemap_index.xml -> 404",
+    "https://www.gourpet.cl/wp-sitemap.xml -> 404"
+   ],
+   "urls_producto": 0,
+   "otras_urls": 0,
+   "sitemap_de_productos": false
+  },
+  "pagina_tienda": {
+   "url": "https://www.gourpet.cl/shop/",
+   "enlaces_producto": 1
+  },
+  "ficha": {
+   "url": "https://www.gourpet.cl/shop/caja-latas-gourpet/",
+   "estructurados": [],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 38.100"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "lavictoria.cl",
+  "fecha": "2026-11-12T02:46:00+0000",
+  "portada": {
+   "status": 403,
+   "final_url": "https://lavictoria.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [],
+  "robots": {
+   "status": 403,
+   "error": null
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [
+    "https://lavictoria.cl/sitemap.xml -> 403",
+    "https://lavictoria.cl/sitemap_index.xml -> 403",
+    "https://lavictoria.cl/wp-sitemap.xml -> 403"
+   ],
+   "urls_producto": 0,
+   "otras_urls": 0,
+   "sitemap_de_productos": false
+  },
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "barfood.cl",
+  "fecha": "2026-11-12T02:46:02+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://barfood.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 54,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://barfood.cl/producto/deshidratado-pavo-2-kg-razas-peq-y-cachorros/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 18.000",
+     "$40.000",
+     "$3990"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "elquipetfood.cl",
+  "fecha": "2026-11-12T02:34:59+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://elquipetfood.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 512,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://elquipetfood.cl/producto/virbac-weight-loss-control-dog-w2/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 33.900",
+     "$ 88.900"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "colapeluda.com",
+  "fecha": "2026-11-12T02:34:58+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://colapeluda.com/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 5,
+   "errores": [],
+   "urls_producto": 0,
+   "otras_urls": 20,
+   "sitemap_de_productos": false
+  },
+  "pagina_tienda": {
+   "url": "https://colapeluda.com/tienda/",
+   "enlaces_producto": 0
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "huellasfood.cl",
+  "fecha": "2026-11-12T02:35:01+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://huellasfood.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 69,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://huellasfood.cl/tienda/instinct-original-gf-perro-pollo-102-kg/",
+   "estructurados": [],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 65.900"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "vetfarma.cl",
+  "fecha": "2026-11-12T02:35:00+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://vetfarma.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 415,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://vetfarma.cl/producto/frontline-spray-100-ml/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 17.990",
+     "$ 12.990",
+     "$ 11.990"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "socomed.cl",
+  "fecha": "2026-11-12T02:35:02+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://socomed.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 1039,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://socomed.cl/producto/desodorante-para-caja-higienica/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 8.930"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "arenasdelmundo.cl",
+  "fecha": "2026-11-12T02:46:00+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://arenasdelmundo.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "WooCommerce"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 45,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://arenasdelmundo.cl/producto/caja-de-sabanillas-para-perros-con-carbon-talla-xl/",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "div.type-product:not(li) (+0 niveles)",
+    "precios": [
+     "$ 41.000",
+     "$ 1.600",
+     "$ 36.000"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "ama.pet",
+  "fecha": "2026-11-12T02:46:00+0000",
+  "portada": {
+   "status": 503,
+   "final_url": "https://ama.pet/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [],
+  "robots": {
+   "status": 503,
+   "error": null
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [
+    "https://ama.pet/sitemap.xml -> 503",
+    "https://ama.pet/sitemap_index.xml -> 503",
+    "https://ama.pet/wp-sitemap.xml -> 503"
+   ],
+   "urls_producto": 0,
+   "otras_urls": 0,
+   "sitemap_de_productos": false
+  },
+  "grupo": "objetivo (WooCommerce según directorio)"
+ },
+ {
+  "dominio": "petvet.cl",
+  "fecha": "2026-11-12T02:34:32+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://petvet.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 4,
+   "errores": [],
+   "urls_producto": 2391,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://petvet.cl/products/bravery-light-iberian-pork-adult-large-medium-breeds",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+2 niveles)",
+    "precios": [
+     "$65,980",
+     "$68,490"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock",
+     "OutOfStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "bpets.cl",
+  "fecha": "2026-11-12T02:35:05+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.bpets.cl/",
+   "redirecciones": [
+    [
+     301,
+     "https://bpets.cl/",
+     "https://www.bpets.cl/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify",
+   "VTEX"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [],
+   "urls_producto": 1328,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://www.bpets.cl/products/arena-america-litter-ultra-odor-seal-extreme-7-kg",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+2 niveles)",
+    "precios": [
+     "$14.990",
+     "$15.990",
+     "$14.241"
+    ],
+    "stock": [
+     "En stock"
+    ],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "pyk.cl",
+  "fecha": "2026-11-12T02:35:06+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://pyk.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 10,
+   "errores": [],
+   "urls_producto": 8507,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://pyk.cl/products/webprd7898574023845",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+2 niveles)",
+    "precios": [
+     "$11,500"
+    ],
+    "stock": [
+     "Agotado"
+    ],
+    "disponibilidad_datos": [
+     "OutOfStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [
+   "https://pyk.cl/pages/como-comprar"
+  ],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "bodegadelamascota.cl",
+  "fecha": "2026-11-12T02:35:06+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://bodegadelamascota.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [],
+   "urls_producto": 1224,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://bodegadelamascota.cl/products/natural-pets-nose-balm-aceite-natural-para-nariz-bioline",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+0 niveles)",
+    "precios": [
+     "$4.900"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "mascotaexpress.cl",
+  "fecha": "2026-11-12T02:35:08+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://mascotaexpress.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 78,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://mascotaexpress.cl/products/pura-natura-alimento-humedo-gatos-pescado-300g",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)",
+    "microdatos Product (precio=no, disponibilidad=no)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+2 niveles)",
+    "precios": [
+     "$1,690",
+     "$2,100",
+     "$35.000"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "thedogs.cl",
+  "fecha": "2026-11-12T02:35:08+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://thedogs.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 56,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://thedogs.cl/products/unas-sin-estres-repuestos-y-pato-calmante",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+3 niveles)",
+    "precios": [
+     "$59.990"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "aricapetshop.cl",
+  "fecha": "2026-11-12T02:35:09+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://aricapetshop.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 672,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://aricapetshop.cl/products/catit-collar-ajustable-azul-con-flores",
+   "estructurados": [
+    "microdatos Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+1 niveles)",
+    "precios": [
+     "$4,990"
+    ],
+    "stock": [
+     "Agotado"
+    ],
+    "disponibilidad_datos": [
+     "OutOfStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "makondopets.com",
+  "fecha": "2026-11-12T02:35:12+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://makondopets.com/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 6,
+   "errores": [
+    "https://makondopets.com/apps/seo-sitemaps/makondo-pets/pages-sitemap.xml -> 404",
+    "https://makondopets.com/apps/seo-sitemaps/makondo-pets/articles-sitemap.xml -> 404",
+    "https://makondopets.com/apps/seo-sitemaps/makondo-pets/images-sitemap.xml -> 404"
+   ],
+   "urls_producto": 18,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://makondopets.com/products/dog-prenatal-vitamins-120-soft-chews",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+1 niveles)",
+    "precios": [
+     "$28.95",
+     "$29.95"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "lefov.cl",
+  "fecha": "2026-11-12T02:35:12+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://lefov.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 14,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://lefov.cl/products/charqui-de-vacuno",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+0 niveles)",
+    "precios": [
+     "$4.990"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "loonawell.com",
+  "fecha": "2026-11-12T02:35:13+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.loonawell.com/",
+   "redirecciones": [
+    [
+     301,
+     "https://loonawell.com/",
+     "https://www.loonawell.com/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 25,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://www.loonawell.com/products/fresh-turkey",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+0 niveles)",
+    "precios": [
+     "$54.90"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": [
+     "Out of Stock"
+    ]
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "befoods.cl",
+  "fecha": "2026-11-12T02:35:16+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.befoods.cl/collections/",
+   "redirecciones": [
+    [
+     301,
+     "https://befoods.cl/",
+     "https://www.befoods.cl/collections/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [],
+   "urls_producto": 1232,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://www.befoods.cl/products/masterdog-sobre-senior-100gr",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+0 niveles)",
+    "precios": [
+     "$620"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "smileforpets.cl",
+  "fecha": "2026-11-12T02:35:16+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.smileforpets.cl/",
+   "redirecciones": [
+    [
+     301,
+     "https://smileforpets.cl/",
+     "https://www.smileforpets.cl/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 25,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://www.smileforpets.cl/products/pack-super-white-carne-gel-limpieza-dental-con-vitamina-c-maxiguard-pasta-petsmile-sabor-carne-asada",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+2 niveles)",
+    "precios": [
+     "$47,990 CLP",
+     "$48,980 CLP",
+     "$47,990"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "erapetfood.cl",
+  "fecha": "2026-11-12T02:35:17+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://erapetfood.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [],
+   "urls_producto": 21,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://erapetfood.cl/products/alimento-humedo-era-sybarite-puppy-perros-cachorros-de-pavo-con-batatas",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+1 niveles)",
+    "precios": [
+     "$4,150",
+     "$24.990"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "control (Shopify según directorio)"
+ },
+ {
+  "dominio": "bestforpets.cl",
+  "fecha": "2026-11-12T02:46:01+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://bestforpets.cl/tienda/",
+   "redirecciones": [
+    [
+     301,
+     "https://bestforpets.cl/",
+     "https://bestforpets.cl/tienda/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "PrestaShop"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo propio)",
+    "OAI-SearchBot": "permitido (grupo propio)",
+    "ChatGPT-User": "permitido (grupo propio)",
+    "ClaudeBot": "permitido (grupo propio)",
+    "PerplexityBot": "permitido (grupo propio)",
+    "Google-Extended": "permitido (grupo propio)",
+    "CCBot": "permitido (grupo propio)"
+   }
+  },
+  "sitemap": {
+   "leidos": 4,
+   "errores": [
+    "https://bestforpets.cl/1_index_sitemap.xml -> 404",
+    "https://bestforpets.cl/sitemap.xml -> 404",
+    "https://bestforpets.cl/sitemap_index.xml -> 404",
+    "https://bestforpets.cl/wp-sitemap.xml -> 404"
+   ],
+   "urls_producto": 0,
+   "otras_urls": 0,
+   "sitemap_de_productos": false
+  },
+  "ficha": {
+   "url": "https://bestforpets.cl/tienda/alimento-brit-care-para-perros/2349--brit-care-senior-light-salmon-grain-free.html",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)",
+    "microdatos Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "[itemtype*='schema.org/Product'] (+0 niveles)",
+    "precios": [
+     "63.110 (sin símbolo $)",
+     "74.247 (sin símbolo $)",
+     "$11.137"
+    ],
+    "stock": [
+     "Disponibilidad: Últimas unidades en "
+    ],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "por verificar"
+ },
+ {
+  "dominio": "pethome.cl",
+  "fecha": "2026-11-12T02:35:19+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://pethome.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "Shopify"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "bloqueado en /, /products/furmaster-cepillo-despelechador-talla-m (grupo propio)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "bloqueado en /, /products/furmaster-cepillo-despelechador-talla-m (grupo propio)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "bloqueado en /, /products/furmaster-cepillo-despelechador-talla-m (grupo propio)",
+    "CCBot": "bloqueado en /, /products/furmaster-cepillo-despelechador-talla-m (grupo propio)"
+   }
+  },
+  "sitemap": {
+   "leidos": 8,
+   "errores": [],
+   "urls_producto": 5971,
+   "otras_urls": 0,
+   "sitemap_de_productos": true
+  },
+  "ficha": {
+   "url": "https://pethome.cl/products/furmaster-cepillo-despelechador-talla-m",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "form[action*='/cart/add'] (+0 niveles)",
+    "precios": [
+     "$10.990",
+     "$5.000",
+     "$15.990"
+    ],
+    "stock": [
+     "Solo queda 1 unidad",
+     "Disponibilidad por ubicación",
+     "Stock: Solo"
+    ],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [
+   "https://pethome.cl/pages/como-comprar"
+  ],
+  "grupo": "por verificar"
+ },
+ {
+  "dominio": "felinus.cl",
+  "fecha": "2026-11-12T02:35:19+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://felinus.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "PrestaShop"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 3,
+   "errores": [
+    "https://felinus.cl/sitemap.xml -> 404",
+    "https://felinus.cl/sitemap_index.xml -> 404",
+    "https://felinus.cl/wp-sitemap.xml -> 404"
+   ],
+   "urls_producto": 0,
+   "otras_urls": 0,
+   "sitemap_de_productos": false
+  },
+  "ficha": {
+   "url": "https://felinus.cl/humedos/vitakraft-poesie-delice-multipack-carne.html",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "#add-to-cart-or-refresh (+0 niveles)",
+    "precios": [
+     "$6.291",
+     "$6.990",
+     "$5.287"
+    ],
+    "stock": [],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [
+   "https://felinus.cl/info/formas-de-pago.html"
+  ],
+  "grupo": "por verificar"
+ },
+ {
+  "dominio": "puntomascotas.cl",
+  "fecha": "2026-11-12T02:46:01+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://puntomascotas.cl/",
+   "redirecciones": [],
+   "error": null
+  },
+  "plataforma_huellas": [
+   "PrestaShop"
+  ],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 4665,
+   "otras_urls": 1103,
+   "sitemap_de_productos": false
+  },
+  "ficha": {
+   "url": "https://puntomascotas.cl/dogs/39943-brit-premium-by-nature-junior-large-15-kg-8595602526437.html",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "#add-to-cart-or-refresh (+0 niveles)",
+    "precios": [
+     "$ 60.990",
+     "$ 60.990",
+     "$4.066"
+    ],
+    "stock": [
+     "disponible!"
+    ],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [
+   "https://puntomascotas.cl/content/5-medios-de-pago"
+  ],
+  "grupo": "por verificar"
+ },
+ {
+  "dominio": "tiendapet.cl",
+  "fecha": "2026-11-12T02:35:23+0000",
+  "portada": {
+   "status": 200,
+   "final_url": "https://www.superzoo.cl/",
+   "redirecciones": [
+    [
+     301,
+     "https://tiendapet.cl/",
+     "https://www.superzoo.cl/"
+    ]
+   ],
+   "error": null
+  },
+  "plataforma_huellas": [],
+  "robots": {
+   "status": 200,
+   "error": null,
+   "bots": {
+    "GPTBot": "permitido (grupo *)",
+    "OAI-SearchBot": "permitido (grupo *)",
+    "ChatGPT-User": "permitido (grupo *)",
+    "ClaudeBot": "permitido (grupo *)",
+    "PerplexityBot": "permitido (grupo *)",
+    "Google-Extended": "permitido (grupo *)",
+    "CCBot": "permitido (grupo *)"
+   }
+  },
+  "sitemap": {
+   "leidos": 2,
+   "errores": [],
+   "urls_producto": 2806,
+   "otras_urls": 609,
+   "sitemap_de_productos": false
+  },
+  "ficha": {
+   "url": "https://www.superzoo.cl/gato/accesorios/rascadores-y-gimnasios/remy-rocker-rascador-de-carton-b/16338.html",
+   "estructurados": [
+    "JSON-LD Product (precio=sí, disponibilidad=sí)"
+   ],
+   "visible": {
+    "zona": "[class*='add-to-cart'] (+1 niveles)",
+    "precios": [
+     "$9.990",
+     "$30.000",
+     "$3.590"
+    ],
+    "stock": [
+     "Disponibilidad: En Stock",
+     "En Stock",
+     "Disponibilidad: En Stock Añadir al c"
+    ],
+    "disponibilidad_datos": [
+     "InStock"
+    ],
+    "descartado_plantilla": []
+   }
+  },
+  "paginas_pago": [],
+  "grupo": "por verificar"
+ },
+ {
+  "dominio": "centralvet.cl",
+  "fecha": "2026-11-12T02:49:14+0000",
+  "portada": {
+   "status": null,
+   "final_url": null,
+   "redirecciones": [],
+   "error": "ProxyError: HTTPSConnectionPool(host='centralvet.cl', port=443): Max retries exceeded with url: / (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 502 Bad Gateway')))"
+  },
+  "grupo": "por verificar"
+ }
+]

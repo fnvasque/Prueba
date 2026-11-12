@@ -1,0 +1,40 @@
+dominio,activo,plataforma,datos_estructurados,rastreadores_ia,precio_visible,medios_de_pago,productos_aprox,url_producto_revisada,notas
+fullerton.cl,sí,WooCommerce,2,1,2,Webpay/Transbank,362,https://fullerton.cl/producto/crema-pastelera-fastmix-400-g/,"robots.txt bloquea: GPTBot, ClaudeBot, Google-Extended, CCBot"
+happymascota.cl,sí,WooCommerce,2,2,2,Webpay/Transbank,2461,https://happymascota.cl/producto/orijen-lata-puppy-poultry-fish-pate-360gr/,
+lospatiperrosconcepcion.cl,sí,WooCommerce,0,2,1,Webpay/Transbank,1596,https://lospatiperrosconcepcion.cl/producto/skouts-honor-spray-calmante-de-picazon-236ml/,
+petshopmg.cl,sí,WooCommerce,0,2,2,Webpay/Transbank,748,https://petshopmg.cl/producto/urinary-perro-st-ox-canino-2-kg/,
+puranatura.pet,sí,WooCommerce,2,2,1,Webpay/Transbank,47,https://www.puranatura.pet/tienda/alimento-humedo-perros-carne-pack-x12/,
+animal-lovers.cl,sí,WooCommerce,2,2,2,Webpay/Transbank,1347,https://animal-lovers.cl/producto/superpet-omega-puppy/,
+superbarf.cl,sí,WooCommerce,0,2,1,,,https://superbarf.cl/producto/comida-barf-de-vacuno/,el sitemap lista 18 URLs pero ninguna de producto (solo páginas/categorías/entradas); productos_aprox no determinado; ficha tomada de enlaces de la portada (no del sitemap); no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+bigotesblancos.cl,sí,WooCommerce,0,2,1,Webpay/Transbank,235,https://bigotesblancos.cl/product/koala-gigwi/,el sitemap declarado en robots.txt no es XML válido; se probaron rutas estándar
+mustafapets.cl,sí,WooCommerce,2,2,1,Webpay/Transbank,448,https://www.mustafapets.cl/producto/ponedora-final-molido-para-aves-25-kg/,
+familiapet.cl,sí,WooCommerce,2,2,1,Webpay/Transbank,15,https://familiapet.cl/producto/60kgsaco-arena-bengala-aromas/,
+gourpet.cl,sí,WooCommerce,0,2,1,,,https://www.gourpet.cl/shop/caja-latas-gourpet/,no se encontró sitemap legible (https://www.gourpet.cl/sitemap.xml -> 404); ficha tomada de la página de tienda /shop/; no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+lavictoria.cl,,,,,,,,,"portada responde HTTP 403; portada devuelve desafío anti-bot (Cloudflare) que exige JavaScript; no se pudo leer el sitio sin ejecutar JS; robots.txt no legible (HTTP 403, None); no se encontró sitemap legible (https://lavictoria.cl/sitemap.xml -> 403)"
+barfood.cl,sí,WooCommerce,2,2,1,Webpay/Transbank,54,https://barfood.cl/producto/deshidratado-pavo-2-kg-razas-peq-y-cachorros/,
+elquipetfood.cl,sí,WooCommerce,2,2,1,Webpay/Transbank,512,https://elquipetfood.cl/producto/virbac-weight-loss-control-dog-w2/,
+colapeluda.com,sí,WooCommerce,,2,,,,,el sitemap lista 20 URLs pero ninguna de producto (solo páginas/categorías/entradas); productos_aprox no determinado; la página de tienda /tienda/ no lista productos; no se encontró ficha de producto para revisar; datos_estructurados y precio_visible sin evaluar; no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+huellasfood.cl,sí,WooCommerce,0,2,1,Webpay/Transbank,69,https://huellasfood.cl/tienda/instinct-original-gf-perro-pollo-102-kg/,
+vetfarma.cl,sí,WooCommerce,2,2,1,,415,https://vetfarma.cl/producto/frontline-spray-100-ml/,no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+socomed.cl,sí,WooCommerce,2,2,1,,1039,https://socomed.cl/producto/desodorante-para-caja-higienica/,no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+arenasdelmundo.cl,sí,WooCommerce,2,2,1,Mercado Pago,45,https://arenasdelmundo.cl/producto/caja-de-sabanillas-para-perros-con-carbon-talla-xl/,
+ama.pet,no,,,,,,,,"portada responde HTTP 503; el sitio muestra una página de mantenimiento; robots.txt no legible (HTTP 503, None); no se encontró sitemap legible (https://ama.pet/sitemap.xml -> 503)"
+petvet.cl,sí,Shopify,2,2,1,Mercado Pago,2391,https://petvet.cl/products/bravery-light-iberian-pork-adult-large-medium-breeds,
+bpets.cl,sí,Shopify,2,2,2,Mercado Pago; Flow; Fintoc; Transferencia; Venti,1328,https://www.bpets.cl/products/arena-america-litter-ultra-odor-seal-extreme-7-kg,
+pyk.cl,sí,Shopify,2,2,2,Mercado Pago; Getnet; Transferencia,8507,https://pyk.cl/products/webprd7898574023845,
+bodegadelamascota.cl,sí,Shopify,2,2,1,,1224,https://bodegadelamascota.cl/products/natural-pets-nose-balm-aceite-natural-para-nariz-bioline,no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+mascotaexpress.cl,sí,Shopify,2,2,1,Mercado Pago,78,https://mascotaexpress.cl/products/pura-natura-alimento-humedo-gatos-pescado-300g,
+thedogs.cl,sí,Shopify,2,2,1,Mercado Pago,56,https://thedogs.cl/products/unas-sin-estres-repuestos-y-pato-calmante,
+aricapetshop.cl,sí,Shopify,2,2,2,,672,https://aricapetshop.cl/products/catit-collar-ajustable-azul-con-flores,no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+makondopets.com,sí,Shopify,2,2,1,PayPal; Shop Pay; Google Pay; Apple Pay,18,https://makondopets.com/products/dog-prenatal-vitamins-120-soft-chews,sitemap con versiones por idioma; se deduplicaron 18 URLs; la tienda Shopify declara país US (posiblemente no es una tienda chilena); ficha con precios en USD
+lefov.cl,sí,Shopify,2,2,1,Webpay/Transbank; Mercado Pago; Flow; Transferencia,14,https://lefov.cl/products/charqui-de-vacuno,
+loonawell.com,sí,Shopify,2,2,1,Shop Pay; Google Pay; Apple Pay,25,https://www.loonawell.com/products/fresh-turkey,la tienda Shopify declara país CH (posiblemente no es una tienda chilena); ficha con precios en USD
+befoods.cl,sí,Shopify,2,2,1,,1232,https://www.befoods.cl/products/masterdog-sobre-senior-100gr,portada redirige a https://www.befoods.cl/collections/; no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+smileforpets.cl,sí,Shopify,2,2,1,Venti,25,https://www.smileforpets.cl/products/pack-super-white-carne-gel-limpieza-dental-con-vitamina-c-maxiguard-pasta-petsmile-sabor-carne-asada,
+erapetfood.cl,sí,Shopify,2,2,1,,21,https://erapetfood.cl/products/alimento-humedo-era-sybarite-puppy-perros-cachorros-de-pavo-con-batatas,sitemap con versiones por idioma; se deduplicaron 21 URLs; no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+bestforpets.cl,sí,PrestaShop,2,2,2,Webpay/Transbank; Transferencia; SweetPay,,https://bestforpets.cl/tienda/alimento-brit-care-para-perros/2349--brit-care-senior-light-salmon-grain-free.html,portada redirige a https://bestforpets.cl/tienda/; el sitemap declarado en robots.txt no es XML válido; se probaron rutas estándar; no se encontró sitemap legible (https://bestforpets.cl/1_index_sitemap.xml -> 404); ficha tomada de enlaces de la portada (no del sitemap)
+pethome.cl,sí,Shopify,2,1,2,Webpay/Transbank,5971,https://pethome.cl/products/furmaster-cepillo-despelechador-talla-m,"robots.txt bloquea: GPTBot, ClaudeBot, Google-Extended, CCBot"
+felinus.cl,sí,PrestaShop,2,2,1,Webpay/Transbank; Transferencia,,https://felinus.cl/humedos/vitakraft-poesie-delice-multipack-carne.html,no se encontró sitemap legible (https://felinus.cl/sitemap.xml -> 404); ficha tomada de enlaces de la portada (no del sitemap)
+puntomascotas.cl,sí,PrestaShop,2,2,2,Webpay/Transbank; Transferencia,4665,https://puntomascotas.cl/dogs/39943-brit-premium-by-nature-junior-large-15-kg-8595602526437.html,sitemap con versiones por idioma; se deduplicaron 2 URLs
+tiendapet.cl,sí,,2,2,2,,2806,https://www.superzoo.cl/gato/accesorios/rascadores-y-gimnasios/remy-rocker-rascador-de-carton-b/16338.html,redirige a www.superzoo.cl; plataforma no identificada por huellas; no se mencionan medios de pago en portada/ficha/página de pagos (pueden aparecer solo en el checkout)
+centralvet.cl,no,,,,,,,,"portada no responde (el proxy no pudo conectar: 502); DNS SERVFAIL: Name servers refused query (lame delegation?) [201.238.248.151, 201.238.248.149]."
